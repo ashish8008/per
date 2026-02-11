@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Responsive Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="logo">MySite</a>
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="forgot-password.html">Forgot?</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</nav>
+
+<!-- Add this script before closing </body> tag -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Responsive Site</h1>
+            <p>Works perfectly on desktop, tablet, and mobile.</p>
+            <a href="#services" class="cta-btn">Get Started</a>
+        </div>
+    </header>
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We build modern, responsive websites for all devices.</p>
+    </section>
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Web Design</h3>
+                <p>Beautiful, responsive designs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Development</h3>
+                <p>Fast and secure coding.</p>
+            </div>
+            <div class="service-card">
+                <h3>Support</h3>
+                <p>24/7 maintenance.</p>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p>&copy; 2026 MySite. All rights reserved.</p>
+    </footer>
+</body>
+</html>
